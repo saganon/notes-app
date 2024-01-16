@@ -28,6 +28,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+  );
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: All',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Folder',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: Trash',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,13 +91,48 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: const Column(
+      body: Column(
         children: <Widget>[
-          Divider(
+          const Divider(
             thickness: 0.2,
             color: Colors.grey,
           ),
+          Expanded(
+            child: Center(
+              child: _widgetOptions.elementAt(_selectedIndex),
+            ),
+          )
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'All',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.folder),
+            label: 'Folder',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.delete),
+            label: 'Trash',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        iconSize: 30.0,
+        selectedLabelStyle: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 14.0,
+          fontWeight: FontWeight.w700,
+        ),
+        unselectedLabelStyle: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 14.0,
+          fontWeight: FontWeight.w400,
+        ),
+        selectedItemColor: const Color.fromRGBO(72, 183, 255, 1),
+        onTap: _onItemTapped,
       ),
     );
   }
