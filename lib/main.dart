@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 "Notes",
                 style: TextStyle(
                   fontFamily: 'Poppins',
-                  fontSize: 24,
+                  fontSize: 24.0,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -51,11 +51,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Icon(
                     Icons.search,
-                    size: 25,
+                    size: 25.0,
+                    color: Colors.black,
                   ),
                   Icon(
                     Icons.add_rounded,
-                    size: 25,
+                    size: 25.0,
+                    color: Colors.black,
                   ),
                 ],
               ),
