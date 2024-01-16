@@ -57,86 +57,98 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: Text(
-                "Notes",
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(
-                    Icons.search,
-                    size: 25.0,
-                    color: Colors.black,
-                  ),
-                  Icon(
-                    Icons.add_rounded,
-                    size: 25.0,
-                    color: Colors.black,
-                  ),
-                ],
-              ),
-            ),
-          ],
+      appBar: _appBar(),
+      body: _body(),
+      bottomNavigationBar: _bottomNavBar(),
+    );
+  }
+
+  Column _body() {
+    return Column(
+      children: <Widget>[
+        const Divider(
+          thickness: 0.2,
+          color: Colors.grey,
         ),
-      ),
-      body: Column(
-        children: <Widget>[
-          const Divider(
-            thickness: 0.2,
-            color: Colors.grey,
+        Expanded(
+          child: Center(
+            child: _widgetOptions.elementAt(_selectedIndex),
+          ),
+        )
+      ],
+    );
+  }
+
+  AppBar _appBar() {
+    return AppBar(
+      title: const Row(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Text(
+              "Notes",
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 24.0,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ),
           Expanded(
-            child: Center(
-              child: _widgetOptions.elementAt(_selectedIndex),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(
+                  Icons.search,
+                  size: 25.0,
+                  color: Colors.black,
+                ),
+                Icon(
+                  Icons.add_rounded,
+                  size: 25.0,
+                  color: Colors.black,
+                ),
+              ],
             ),
-          )
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: 'All',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.folder_open),
-            label: 'Folder',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.delete_outline),
-            label: 'Trash',
           ),
         ],
-        currentIndex: _selectedIndex,
-        iconSize: 30.0,
-        selectedLabelStyle: const TextStyle(
-          fontFamily: 'Poppins',
-          fontSize: 14.0,
-          fontWeight: FontWeight.w700,
-        ),
-        unselectedLabelStyle: const TextStyle(
-          fontFamily: 'Poppins',
-          fontSize: 14.0,
-          fontWeight: FontWeight.w400,
-          color: Color.fromRGBO(0, 0, 0, 1),
-        ),
-        selectedItemColor: const Color.fromRGBO(72, 183, 255, 1),
-        unselectedItemColor: const Color.fromRGBO(0, 0, 0, 1),
-        type: BottomNavigationBarType.fixed,
-        onTap: _onItemTapped,
       ),
+    );
+  }
+
+  BottomNavigationBar _bottomNavBar() {
+    return BottomNavigationBar(
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home_outlined),
+          label: 'All',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.folder_open),
+          label: 'Folder',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.delete_outline),
+          label: 'Trash',
+        ),
+      ],
+      currentIndex: _selectedIndex,
+      iconSize: 30.0,
+      selectedLabelStyle: const TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 14.0,
+        fontWeight: FontWeight.w400,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 14.0,
+        fontWeight: FontWeight.w400,
+        color: Color.fromRGBO(0, 0, 0, 1),
+      ),
+      selectedItemColor: const Color.fromRGBO(72, 183, 255, 1),
+      unselectedItemColor: const Color.fromRGBO(0, 0, 0, 1),
+      type: BottomNavigationBarType.fixed,
+      onTap: _onItemTapped,
     );
   }
 }
