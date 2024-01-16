@@ -107,15 +107,15 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
             label: 'All',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.folder),
+            icon: Icon(Icons.folder_open),
             label: 'Folder',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.delete),
+            icon: Icon(Icons.delete_outline),
             label: 'Trash',
           ),
         ],
@@ -130,8 +130,11 @@ class _MyHomePageState extends State<MyHomePage> {
           fontFamily: 'Poppins',
           fontSize: 14.0,
           fontWeight: FontWeight.w400,
+          color: Color.fromRGBO(0, 0, 0, 1),
         ),
         selectedItemColor: const Color.fromRGBO(72, 183, 255, 1),
+        unselectedItemColor: const Color.fromRGBO(0, 0, 0, 1),
+        type: BottomNavigationBarType.fixed,
         onTap: _onItemTapped,
       ),
     );
