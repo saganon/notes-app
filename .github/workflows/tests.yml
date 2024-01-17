@@ -1,0 +1,14 @@
+name: Flutter Test
+
+on:
+  push:
+    branches: "main"
+
+jobs:
+  widget-test:
+    name: Run Widget Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+      - run: flutter test
