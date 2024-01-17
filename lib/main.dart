@@ -81,6 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   AppBar _appBar() {
     return AppBar(
+      key: const ValueKey('App Bar'),
       title: const Row(
         children: [
           Expanded(
