@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/screens/all_notes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,10 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     fontWeight: FontWeight.bold,
   );
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: All',
-      style: optionStyle,
-    ),
+    AllNotes(),
     Text(
       'Index 1: Folder',
       style: optionStyle,
