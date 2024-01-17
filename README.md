@@ -1,4 +1,4 @@
-<a href="https://github.com/saganon/notes-app/actions"><img src="https://github.com/saganon/notes-app/workflows/widget-test/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/saganon/notes-app/actions"><img src="https://github.com/saganon/notes-app/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
 
 # Notes App
 
