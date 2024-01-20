@@ -55,37 +55,26 @@ class AllNotes extends StatelessWidget {
             ),
           ),
           Container(
-            height: 183,
+            height: 80,
             width: MediaQuery.of(context).size.width,
             margin: const EdgeInsets.only(
               top: 16.0,
+            ),
+            padding: const EdgeInsets.only(
+              left: 16.0,
+              right: 16.0,
+              top: 12.0,
+              bottom: 12.0,
             ),
             decoration: const BoxDecoration(
               color: Color.fromRGBO(247, 247, 247, 1),
               borderRadius: BorderRadius.all(Radius.circular(15)),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Expanded(
-                  child: Container(
-                    height: 114.0,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      image: DecorationImage(
-                        image: AssetImage('images/dummy-notes-img.png'),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.only(
-                    left: 16.0,
-                    top: 12.0,
-                    bottom: 12.0,
-                  ),
+                  flex: 2,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -113,6 +102,18 @@ class AllNotes extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                Container(
+                  height: 80,
+                  width: 60,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                    image: DecorationImage(
+                      image: AssetImage('images/dummy-notes-img.png'),
+                      fit: BoxFit.fill,
+                      filterQuality: FilterQuality.high,
+                    ),
                   ),
                 ),
               ],
