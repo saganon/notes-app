@@ -11,5 +11,7 @@ void main() {
 
     expect(find.text('Welcome to Notes'), findsOneWidget);
     expect(find.text('14 January 2023'), findsOneWidget);
+    expect(find.text('Meeting Notes'), findsOneWidget);
+    expect(find.byKey(const ValueKey("Notes Image")), findsOneWidget);
   });
 }

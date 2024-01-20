@@ -107,6 +107,7 @@ class AllNotes extends StatelessWidget {
                 Container(
                   height: 80,
                   width: 60,
+                  key: const ValueKey("Notes Image"),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                     image: DecorationImage(
