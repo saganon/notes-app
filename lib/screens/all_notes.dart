@@ -90,7 +90,7 @@ class AllNotes extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        'Welcome to Notes',
+                        'Meeting Notes',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
