@@ -10,7 +10,7 @@ void main() {
     await tester.pump();
 
     expect(find.text('Welcome to Notes'), findsOneWidget);
-    expect(find.text('14 January 2023'), findsOneWidget);
+    expect(find.text('2024-04-25'), findsOneWidget);
     expect(find.text('Meeting Notes'), findsOneWidget);
     expect(find.byKey(const ValueKey("Notes Image")), findsOneWidget);
   });
