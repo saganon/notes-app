@@ -1,8 +1,6 @@
 name: widget-test
 
-on:
-  push:
-    branches: "main"
+on: [push]
 
 jobs:
   widget-test:
