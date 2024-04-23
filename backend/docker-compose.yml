@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:16.2
+    restart: always
+    environment:
+      - POSTGRES_USER=notesApp
+      - POSTGRES_PASSWORD=notesAppPostgres2342423
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  postgres:
