@@ -4,11 +4,9 @@ import createError from "http-errors"
 
 const prisma = new PrismaClient()
 
-
 const app = express()
 
 app.use(express.json())
-
 
 app.get('/notes', async (req: Request, res: Response) => {
     const posts = await prisma.notes.findMany({})
@@ -23,4 +21,3 @@ app.use((req: Request, res: Response, next: Function) => {
 app.listen(3000, () =>
     console.log(`⚡️[server]: Server is running at https://localhost:3000`)
 )
-
